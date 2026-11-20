@@ -18,15 +18,38 @@ bears$SEX<- as.factor(bears$SEX)
 bears$MONTH<- as.factor(bears$MONTH)
 ```
 
-## Model LENGTH ~ NECK  this is an example  
+## Model LENGTH ~ NECK  this is an example 
+
+```{r}
+plot(LENGTH ~ NECK,data=bears,pch=19)
+```
+As the neck circumfrunces increases so does neck lenght neck.
 
 
-Compare all models that predict LENGTH other than NECK.  
+```{r}
+model.1 <- lm(LENGTH ~ NECK,data=bears)
+summary.lm(model.1)
+```
+
+ the adjust R-squared is 0.7476.
+ 
+ 
+Compare all models that predict LENGTH other  thanNECK.  
 Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
 
-## Model LENGTH ~ HEADLEN
+## Model LENGTH ~ HEADLEN  
 
+```{r}
+plot(LENGTH ~ HEADLEN,data=bears,pch=19)
+```
+As the Length of the neck increases so does the circumfrence of the Headlen.  
 
+```{r}
+model.1 <- lm(LENGTH ~ HEADLEN,data=bears)
+summary.lm(model.1)
+```
+
+the adjusted R-square is 0.8434, bigger than the previous models.  
 
 ## Model LENGTH ~ HeadWTH
 
