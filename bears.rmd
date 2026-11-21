@@ -45,7 +45,8 @@ plot(LENGTH ~ HEADLEN,data=bears,pch=19)
 ```
 
 
-As the headlength increases, so does length. However, this box plot is not entirely linear. 
+As the head length increases, so does the length of the bear. However, this box plot is not entirely linear. 
+
 
 ```{r}
 model.2 <- lm(LENGTH ~ HEADLEN,data=bears)
@@ -54,17 +55,23 @@ summary.lm(model.2)
 
 The adjusted R-squared is 0.8434, which is bigger than the previous models.  
 
+
 ## Model LENGTH ~ HeadWTH
 
 ```{r}
 plot(LENGTH ~ HEADWTH,data=bears,pch=19)
-```
+```  
+
+
+It shows that as head with increases so does length but almost at a slower rate. the plot is mainly linear with an upward trend. slight deviation.
 
 
 ```{r}
 model.3 <- lm(LENGTH ~ HEADWTH,data=bears)
 summary.lm(model.3)
-```  
+```   
+
+
 
 the Adjusted R-Squared is 0.5321  
 
@@ -74,22 +81,40 @@ the Adjusted R-Squared is 0.5321
 ```{r}
 plot(LENGTH ~ CHEST,data=bears,pch=19)
 ```
+  
+similar to the two previous plots, As chest measurements increase, so does the overall length of bear.The plot is still somewhat linear, again fallowing an upward trend, with a bit of deviation.    
 
 
 ```{r}
 model.4 <- lm(LENGTH ~ CHEST,data=bears)
 summary.lm(model.4)
 ```  
-The Adjusted R-squared is 0.7869   
+
+The Adjusted R-squared is 0.7869, making it the second largest.  
+
 
 ## Model LENGTH ~ WEIGHT  
 
 ```{r}
 plot(LENGTH ~ WEIGHT, data=bears,pch=19)
-```
+```  
+
+As the weight of the bear increases, length also increase mainly at the beginning of the plot. this makes the beginning of the plot deviate a bit from the usual linear plot.
+
 
 ```{r}
 model.5 <- lm(LENGTH ~ WEIGHT,data=bears)
 summary.lm(model.5)
 ```  
-The Adjusted R-Square is 0.7423 
+The Adjusted R-Square is 0.7423. making it one of the lowest numbers.
+
+
+## Final Rank  
+#### In order from biggest to smallest adjusted R-squared values.
+
+A) 0.8434
+B) 0.7869
+C) 0.7476
+D) 0.7423
+E) 0.5321
+
