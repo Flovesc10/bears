@@ -22,7 +22,8 @@ bears$MONTH<- as.factor(bears$MONTH)
 
 ```{r}
 plot(LENGTH ~ NECK,data=bears,pch=19)
-```
+```  
+
 As the neck circumfrunces increases so does neck lenght neck.
 
 
@@ -42,23 +43,53 @@ Then order them from worst to best by its value of Adjusted-Rsquared (bigger is 
 ```{r}
 plot(LENGTH ~ HEADLEN,data=bears,pch=19)
 ```
-As the Length of the neck increases so does the circumfrence of the Headlen.  
+
+
+As the head length increases, so does the Headlen increases.  
 
 ```{r}
-model.1 <- lm(LENGTH ~ HEADLEN,data=bears)
-summary.lm(model.1)
+model.2 <- lm(LENGTH ~ HEADLEN,data=bears)
+summary.lm(model.2)
 ```
 
-the adjusted R-square is 0.8434, bigger than the previous models.  
+the adjusted R-square is 0.8434,which is bigger than the previous models.  
 
 ## Model LENGTH ~ HeadWTH
 
+```{r}
+plot(LENGTH ~ HEADWTH,data=bears,pch=19)
+```
+
+
+```{r}
+model.3 <- lm(LENGTH ~ HEADWTH,data=bears)
+summary.lm(model.3)
+```  
+
+the Adjusted R-Squared is 0.5321  
 
 
 ## Model LENGTH ~ CHEST
 
+```{r}
+plot(LENGTH ~ CHEST,data=bears,pch=19)
+```
 
 
-## Model LENGTH ~ WEIGHT
+```{r}
+model.4 <- lm(LENGTH ~ CHEST,data=bears)
+summary.lm(model.4)
+```  
+The Adjusted R-squared is 0.7869   
 
+## Model LENGTH ~ WEIGHT  
 
+```{r}
+plot(LENGTH ~ WEIGHT, data=bears,pch=19)
+```
+
+```{r}
+model.5 <- lm(LENGTH ~ WEIGHT,data=bears)
+summary.lm(model.5)
+```  
+The Adjusted R-Square is 0.7423 
