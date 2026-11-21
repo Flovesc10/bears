@@ -24,7 +24,7 @@ bears$MONTH<- as.factor(bears$MONTH)
 plot(LENGTH ~ NECK,data=bears,pch=19)
 ```  
 
-As the neck circumfrunces increases so does neck lenght neck.
+As the neck circumference increases, so does the neck lenght.the plot is primarily linear.
 
 
 ```{r}
@@ -32,7 +32,7 @@ model.1 <- lm(LENGTH ~ NECK,data=bears)
 summary.lm(model.1)
 ```
 
- the adjust R-squared is 0.7476.
+The adjust R-squared is 0.7476.
  
  
 Compare all models that predict LENGTH other  thanNECK.  
@@ -45,14 +45,14 @@ plot(LENGTH ~ HEADLEN,data=bears,pch=19)
 ```
 
 
-As the head length increases, so does the Headlen increases.  
+As the headlength increases, so does length. However, this box plot is not entirely linear. 
 
 ```{r}
 model.2 <- lm(LENGTH ~ HEADLEN,data=bears)
 summary.lm(model.2)
 ```
 
-the adjusted R-square is 0.8434,which is bigger than the previous models.  
+The adjusted R-squared is 0.8434, which is bigger than the previous models.  
 
 ## Model LENGTH ~ HeadWTH
 
